@@ -17,5 +17,5 @@ def compute_sum_log(n):
   sum = 0
   for factor in range(2, n):
     if is_prime(factor):
-      sum = log(factor)
+      sum = log(factor)+sum
   print(sum,n,n/sum)
