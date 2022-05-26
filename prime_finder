@@ -12,3 +12,9 @@ def nth_is_prime(x):
     if is_prime(guess):
       counter = counter + 1
   print(guess)
+def compute_sum_log(n):
+  sum = 0
+  for factor in range(2, n):
+    if is_prime(factor):
+      sum = log(factor)
+  print(sum,n,n/sum)
