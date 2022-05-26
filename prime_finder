@@ -1,0 +1,14 @@
+def is_prime(x):
+  for factor in range(2,x):
+    if x%factor ==0:
+      return False
+  return True
+
+def nth_is_prime(x):
+  guess = 1
+  counter = 0
+  while counter<x:
+    guess = guess + 1
+    if is_prime(guess):
+      counter = counter + 1
+  print(guess)
