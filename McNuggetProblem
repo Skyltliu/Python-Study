@@ -1,0 +1,30 @@
+def check(n):
+  if(n>=20):
+    return check(n-20) or check(n-9) or check(n-6)
+  if(n>=9):
+    return check(n-9) or check(n-6)
+  if(n>=6):
+    return check(n-6)
+  return n == 0
+
+def find_max_unbuyable():
+    least = 6
+    n = 0
+    last_unsolved = None
+    consecutive = 0
+    while consecutive < least:
+        n += 1
+        if check(n):
+            consecutive += 1
+        else:
+            last_unsolved = n
+            consecutive = 0
+    return last_unsolved
+
+def main():
+    
+    max_unbuyable = find_max_unbuyable()
+    print("Largest number of McNuggets that cannot be bought in exact quantity: {n}".format(n=max_unbuyable))
+
+if __name__=="__main__":
+    main()
